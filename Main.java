@@ -1,14 +1,26 @@
-package bank;
+package pay;
+
 public class Main {
     public static void main(String[] args) {
-        BankAccount account = new BankAccount("John", 1000);
-        System.out.println("Account Holder: " + account.getaccountHolder());
-        System.out.println("Current Balance: $" + account.getbalance());
+        CreditCard creditCardPayment = new CreditCard();
+        Paypal payPalPayment = new Paypal();
 
-        account.deposit(500);
-        System.out.println("Balance after deposit: $" + account.getbalance());
+        creditCardPayment.makePayment(100.0);
+        payPalPayment.makePayment(100.0);
 
-        account.withdraw(200);
-        System.out.println("Final Balance: $" + account.getbalance());
+        System.out.println(); 
+
+        Circle circle = new Circle(5.0);
+        Square square = new Square(4.0);
+        
+        System.out.println("Circle Info:");
+        circle.showinfo();
+        System.out.println("Circle Area: " + circle.getArea());
+
+        System.out.println("\nSquare Info:");
+        square.showinfo();
+        System.out.println("Square Area: " + square.getArea());
+        
     }
+
 }
